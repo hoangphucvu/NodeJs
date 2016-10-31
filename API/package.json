@@ -1,0 +1,22 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "Simple web api using nodejs",
+  "main": "app.js",
+  "scripts": {
+    "start" : "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoangphucvu/NodeJs.git"
+  },
+  "author": "Tony",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hoangphucvu/NodeJs/issues"
+  },
+  "homepage": "https://github.com/hoangphucvu/NodeJs#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
