@@ -2,7 +2,7 @@
 * @Author: hoangphucvu
 * @Date:   2016-10-31 13:08:37
 * @Last Modified by:   hoangphucvu
-* @Last Modified time: 2016-11-04 15:43:30
+* @Last Modified time: 2016-11-04 15:51:08
 */
 
 var express = require('express'),
@@ -20,7 +20,10 @@ var bookRouter = express.Router();
 
 bookRouter.route('/Books')
 .get(function(req,res){
-	Book.find(function(err,books){
+	var query = {};
+	if (req.query.genre)
+		query.genre = req.query.genre;
+	Book.find(query,function(err,books){
 		if (err)
 			res.status(500).send(err);
 		else
