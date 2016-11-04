@@ -2,7 +2,7 @@
 * @Author: hoangphucvu
 * @Date:   2016-10-31 13:08:37
 * @Last Modified by:   hoangphucvu
-* @Last Modified time: 2016-11-04 15:51:08
+* @Last Modified time: 2016-11-04 15:53:59
 */
 
 var express = require('express'),
@@ -28,6 +28,17 @@ bookRouter.route('/Books')
 			res.status(500).send(err);
 		else
 			res.json(books);
+
+	});
+});
+
+bookRouter.route('/Books/:bookId')
+.get(function(req,res){
+	Book.findById(req.params.bookId,function(err,book){
+		if (err)
+			res.status(500).send(err);
+		else
+			res.json(book);
 
 	});
 });
