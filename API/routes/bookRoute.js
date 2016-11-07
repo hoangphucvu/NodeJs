@@ -1,8 +1,8 @@
 /*
 * @Author: Ngo Hung Phuc
 * @Date:   2016-11-06 16:44:08
-* @Last Modified by:   Ngo Hung Phuc
-* @Last Modified time: 2016-11-06 16:48:25
+* @Last Modified by:   hoangphucvu
+* @Last Modified time: 2016-11-07 15:05:05
 */
 var express = require('express');
 var routes = function(Book){
@@ -32,13 +32,24 @@ var routes = function(Book){
 
 	bookRouter.route('/Books/:bookId')
 	.get(function(req,res){
-
-
 		Book.findById(req.params.bookId, function(err,book){
 			if(err)
 				res.status(500).send(err);
 			else
 				res.json(book);
+		});
+	})
+	.put(function(req,res){
+		Book.findById(req.params.bookId, function(err,book){
+			if(err)
+				res.status(500).send(err);
+			else
+				book.title = req.body.title;
+			book.author = req.body.author;
+			book.genre = req.body.genre;
+			book.read = req.body.read;
+			book.save();
+			res.json(book);
 		});
 	});
 	return bookRouter;
