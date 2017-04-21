@@ -2,7 +2,7 @@ const request = require('request');
 
 var getWeather = (lat, lng, callback) => {
   request({
-    url: `https://api.forecast.io/forecast/4ffb39ed87ad21e4942973a221555f21/${lat},${lng}`,
+    url: `https://api.forecast.io/forecast/4a04d1c42fd9d32c97a2c291a32d5e2d/${lat},${lng}`,
     json: true
   }, (error, response, body) => {
     if (error) {
