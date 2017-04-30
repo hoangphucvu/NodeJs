@@ -36,3 +36,11 @@ it('should expect some values', ()=>{
     })
 })
 */
+
+//need to add done argument to notify mocha that test is complete
+it('shoud async add 2 number', (done) => {
+    util.asyncAdd(4, 3, (sum) => {
+        expect(sum).toBe(7).toBeA('number');
+        done();
+    });
+});
