@@ -4,12 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha **/*.test.js"
+    "test": "mocha **/*.test.js",
+    "live-test":"nodemon --exec \"npm test\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "mocha": "^3.3.0"
+    "expect": "^1.20.2",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0"
   }
 }
